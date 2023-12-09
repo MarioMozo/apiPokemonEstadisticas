@@ -1,27 +1,30 @@
 package com.pokeapi.persistence.entity;
 
-
 import jakarta.persistence.*;
-
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "jugador")
-
-
+@Table(name = "pokemon")
+@Getter
+@Setter
+@NoArgsConstructor
 public class pokemonEntity {
 
-    public pokemonEntity(){}
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_jugador", nullable = false)
-    private Integer idjugador;
-
+    @Column(name = "id_pokemon", nullable = false)
+    private Integer idPokemon;
 
     @Column(nullable = false, length = 35)
     private String nombre;
 
-    @Column(nullable = false)
-    private Integer nivel;
+    @Column(name= "nombre_estadistica",nullable = false, length = 35)
+    private String nombreEstadistica;
+
+    @Column(name="valor_estadistica",nullable = false)
+    private Integer valorEstadistica;
 
     @Column(nullable = false)
     private Integer batallas;
@@ -31,13 +34,4 @@ public class pokemonEntity {
 
     @Column(nullable = false)
     private Integer derrotas;
-
-    public Integer getBatallas() {
-        return batallas;
-    }
-
-    public void setBatallas(Integer batallas) {
-        this.batallas = batallas;
-    }
-
 }
