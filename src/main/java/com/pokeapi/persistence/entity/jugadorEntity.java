@@ -1,10 +1,15 @@
 package com.pokeapi.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "jugador")
-
+@Getter
+@Setter
+@NoArgsConstructor
 public class jugadorEntity {
 
     @Id
