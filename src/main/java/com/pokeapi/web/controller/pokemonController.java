@@ -1,6 +1,6 @@
 package com.pokeapi.web.controller;
 
-import com.pokeapi.persistence.entity.PokemonEntity;
+import com.pokeapi.entity.PokemonEntity;
 import com.pokeapi.service.PokemonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

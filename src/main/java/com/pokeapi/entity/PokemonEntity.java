@@ -1,15 +1,16 @@
-package com.pokeapi.persistence.entity;
+package com.pokeapi.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+
+@Setter
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "pokemon")
-@Getter
-@Setter
-@NoArgsConstructor
 public class PokemonEntity {
 
     @Id

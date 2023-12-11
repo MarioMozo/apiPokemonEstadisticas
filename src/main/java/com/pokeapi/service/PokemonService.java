@@ -1,7 +1,7 @@
 package com.pokeapi.service;
 
-import com.pokeapi.persistence.entity.PokemonEntity;
-import com.pokeapi.persistence.repository.PokemonRepository;
+import com.pokeapi.entity.PokemonEntity;
+import com.pokeapi.repository.PokemonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
