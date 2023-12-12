@@ -2,6 +2,8 @@ package com.pokeapi.repository;
 
 import com.pokeapi.entity.PokemonEntity;
 import org.springframework.data.repository.ListCrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface PokemonRepository extends ListCrudRepository <PokemonEntity,Integer>{
+@Repository
+public interface PokemonRepository extends ListCrudRepository <PokemonEntity, Integer>{
 }
