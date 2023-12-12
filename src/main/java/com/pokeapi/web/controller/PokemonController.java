@@ -32,6 +32,5 @@ public class PokemonController {
                         .build())
                 .toList();
         return ResponseEntity.ok(pokemonLista);
-
     }
 }

@@ -21,17 +21,15 @@ public class JugadorDAOImpl implements IJugadorDAO {
     }
 
     @Override
-    public Optional<JugadorEntity> findById(Integer id) {
-        return Optional.empty();
-    }
+    public Optional<JugadorEntity> findById(Integer id) {return jugadorRepository.findById(id);}
 
     @Override
     public void save(JugadorEntity jugador) {
-
+        jugadorRepository.save(jugador);
     }
 
     @Override
     public void deleteById(Integer id) {
-
+        jugadorRepository.deleteById(id);
     }
 }

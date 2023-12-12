@@ -20,17 +20,13 @@ public class JugadorServiceImpl implements IJugadorService {
     }
 
     @Override
-    public Optional<JugadorEntity> findById(Integer id) {
-        return Optional.empty();
-    }
+    public Optional<JugadorEntity> findById(Integer id) {return jugadorDAO.findById(id);}
 
     @Override
-    public void save(JugadorEntity jugador) {
-
-    }
+    public void save(JugadorEntity jugador) {jugadorDAO.save(jugador);}
 
     @Override
     public void deleteById(Integer id) {
-
+        jugadorDAO.deleteById(id);
     }
 }
