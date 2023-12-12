@@ -90,8 +90,10 @@ public class JugadorController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id){
         if (id != null){
-            return ResponseEntity.noContent().build();
+            //SE TIENE QUE LLAMAR AL SERVICE
+            jugadorService.deleteById(id);
+            return ResponseEntity.ok("Registro eliminado");
         }
-        return ResponseEntity.badRequest().body("Esta vacio");
+        return ResponseEntity.badRequest().build();
     }
 }
