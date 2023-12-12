@@ -20,17 +20,15 @@ public class PokemonDAOImpl implements IPokemonDAO {
 
 
     @Override
-    public Optional<PokemonEntity> findById(Integer id) {return Optional.empty();}
+    public Optional<PokemonEntity> findById(Integer id) {return pokemonRepository.findById(id);}
 
 
 
     @Override
-    public void save(PokemonEntity pokemon) {
+    public void save(PokemonEntity pokemon) {pokemonRepository.save(pokemon);}
 
-    }
+
 
     @Override
-    public void deleteById(Integer id) {
-
-    }
+    public void deleteById(Integer id) {pokemonRepository.deleteById(id);}
 }

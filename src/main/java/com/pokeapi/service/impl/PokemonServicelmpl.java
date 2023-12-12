@@ -18,16 +18,13 @@ public class PokemonServicelmpl implements IPokemonService {
 
 
     @Override
-    public Optional<PokemonEntity> findById(Integer id) {return Optional.empty();}
+    public Optional<PokemonEntity> findById(Integer id) {return pokemonDAO.findById(id);}
 
 
     @Override
-    public void save(PokemonEntity pokemon) {
+    public void save(PokemonEntity pokemon) {pokemonDAO.save(pokemon);}
 
-    }
 
     @Override
-    public void deleteById(Integer id) {
-
-    }
+    public void deleteById(Integer id) {pokemonDAO.deleteById(id);}
 }
