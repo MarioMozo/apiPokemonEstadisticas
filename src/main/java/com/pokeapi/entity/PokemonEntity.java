@@ -45,5 +45,4 @@ public class PokemonEntity {
     @JoinColumn(name = "id_jugador", insertable = false, updatable = false)
     private JugadorEntity jugador;
 
-
 }
