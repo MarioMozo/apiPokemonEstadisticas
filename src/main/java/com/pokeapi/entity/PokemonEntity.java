@@ -1,5 +1,6 @@
 package com.pokeapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -41,6 +42,8 @@ public class PokemonEntity {
     private Integer derrotas;
 
     @OneToOne
-    @JoinColumn(name="id_jugador",referencedColumnName = "id_jugador",insertable = false,updatable = false)
-    private List<JugadorEntity> jugadorEntity = new ArrayList<>();
+    @JoinColumn(name = "id_jugador", insertable = false, updatable = false)
+    private JugadorEntity jugador;
+
+
 }
