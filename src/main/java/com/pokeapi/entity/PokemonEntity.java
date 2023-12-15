@@ -3,6 +3,9 @@ package com.pokeapi.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Setter
 @Getter
@@ -17,6 +20,7 @@ public class PokemonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pokemon", nullable = false)
     private Integer idPokemon;
+
 
     @Column(nullable = false, length = 35)
     private String nombre;
@@ -35,4 +39,8 @@ public class PokemonEntity {
 
     @Column(nullable = false)
     private Integer derrotas;
+
+    @OneToOne
+    @JoinColumn(name="id_jugador",referencedColumnName = "id_jugador",insertable = false,updatable = false)
+    private List<JugadorEntity> jugadorEntity = new ArrayList<>();
 }
