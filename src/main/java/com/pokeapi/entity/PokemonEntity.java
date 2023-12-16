@@ -18,7 +18,8 @@ import java.util.List;
 public class PokemonEntity {
 
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //Se genera automaticamente
+   //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pokemon", nullable = false)
     private Integer idPokemon;
 

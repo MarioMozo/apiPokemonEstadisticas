@@ -19,6 +19,7 @@ public class BattlePokemonDAOImpl implements IBattlePokemonDAO {
 
     @Override
     public List<BattlePokemonEntity> findAll() {
+
         return (List<BattlePokemonEntity>) battlePokemonRepository.findAll();
     }
 
