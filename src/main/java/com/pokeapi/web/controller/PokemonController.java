@@ -46,9 +46,13 @@ public class PokemonController {
                     .nombreEstadistica(pokemon.getNombreEstadistica())
                     .valorEstadistica(pokemon.getValorEstadistica())
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> bugs
+=======
+
+>>>>>>> origin/martin
                     .build();
             return ResponseEntity.ok(pokemonEntityOptional);
         }
