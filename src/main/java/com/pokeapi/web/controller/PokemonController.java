@@ -45,6 +45,10 @@ public class PokemonController {
                     .nombre(pokemon.getNombre())
                     .nombreEstadistica(pokemon.getNombreEstadistica())
                     .valorEstadistica(pokemon.getValorEstadistica())
+<<<<<<< HEAD
+=======
+
+>>>>>>> bugs
                     .build();
             return ResponseEntity.ok(pokemonEntityOptional);
         }

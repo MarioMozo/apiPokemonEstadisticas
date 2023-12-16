@@ -5,10 +5,12 @@ import com.pokeapi.entity.BattlePokemonEntity;
 import com.pokeapi.persistence.IBattleDAO;
 import com.pokeapi.repository.BattleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class BattleDAOImpl implements IBattleDAO {
     @Autowired
     BattleRepository battleRepository;
