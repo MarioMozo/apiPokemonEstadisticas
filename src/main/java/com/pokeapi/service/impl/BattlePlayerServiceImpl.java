@@ -5,10 +5,12 @@ import com.pokeapi.persistence.IBattlePlayerDAO;
 import com.pokeapi.persistence.IBattlePokemonDAO;
 import com.pokeapi.service.IBattlePlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class BattlePlayerServiceImpl implements IBattlePlayerService {
 
     @Autowired
