@@ -15,8 +15,5 @@ public class PokemonDTO {
     private String nombre;
     private String nombreEstadistica;
     private Integer valorEstadistica;
-    private Integer batallas;
-    private Integer victorias;
-    private Integer derrotas;
 
 }

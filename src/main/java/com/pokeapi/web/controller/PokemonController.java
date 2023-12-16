@@ -29,9 +29,6 @@ public class PokemonController {
                         .nombre(pokemon.getNombre())
                         .nombreEstadistica(pokemon.getNombreEstadistica())
                         .valorEstadistica(pokemon.getValorEstadistica())
-                        .batallas(pokemon.getBatallas())
-                        .victorias(pokemon.getVictorias())
-                        .derrotas(pokemon.getDerrotas())
                         .build())
                 .toList();
         return ResponseEntity.ok(pokemonLista);
@@ -48,9 +45,6 @@ public class PokemonController {
                     .nombre(pokemon.getNombre())
                     .nombreEstadistica(pokemon.getNombreEstadistica())
                     .valorEstadistica(pokemon.getValorEstadistica())
-                    .batallas(pokemon.getBatallas())
-                    .victorias(pokemon.getVictorias())
-                    .derrotas(pokemon.getDerrotas())
                     .build();
             return ResponseEntity.ok(pokemonEntityOptional);
         }
@@ -66,9 +60,6 @@ public class PokemonController {
                 .nombre(pokemonDTO.getNombre())
                 .nombreEstadistica(pokemonDTO.getNombreEstadistica())
                 .valorEstadistica(pokemonDTO.getValorEstadistica())
-                .batallas(pokemonDTO.getBatallas())
-                .victorias(pokemonDTO.getVictorias())
-                .derrotas(pokemonDTO.getDerrotas())
                 .build());
         return ResponseEntity.created(new URI("/api/pokemon/guardar")).build();
 
@@ -84,9 +75,6 @@ public class PokemonController {
                     pokemon.setNombre(pokemonDTO.getNombre());
                     pokemon.setNombreEstadistica(pokemonDTO.getNombreEstadistica());
                     pokemon.setValorEstadistica(pokemonDTO.getValorEstadistica());
-                    pokemon.setBatallas(pokemonDTO.getBatallas());
-                    pokemon.setVictorias(pokemonDTO.getVictorias());
-                    pokemon.setDerrotas(pokemonDTO.getDerrotas());
                     pokemonService.save(pokemon);
             return ResponseEntity.ok("Se actualizo correctamente");
         }
