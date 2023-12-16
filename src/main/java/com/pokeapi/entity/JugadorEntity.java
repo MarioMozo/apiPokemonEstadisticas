@@ -1,5 +1,6 @@
 package com.pokeapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -37,7 +38,5 @@ public class JugadorEntity {
     @Column(nullable = false)
     private Integer derrotas;
 
-    @OneToOne
-    @JoinColumn(name="id_pokemon",referencedColumnName = "id_pokemon",insertable = false,updatable = false)
-    private List<PokemonEntity> pokemonEntity = new ArrayList<>();
+
 }
