@@ -25,4 +25,9 @@ public class BattlePlayerEntity {
 
     @Column (nullable = false)
     private Integer defeat;
+
+
+    @ManyToOne
+    @JoinColumn(name = "id_player", referencedColumnName = "id_player",insertable = false, updatable = false)
+    private PlayerEntity player;
 }
