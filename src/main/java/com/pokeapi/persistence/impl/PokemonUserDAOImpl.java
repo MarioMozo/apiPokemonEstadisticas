@@ -31,7 +31,7 @@ public class PokemonUserDAOImpl implements IPokemonUserDAO {
     }
 
     @Override
-    public void deleById(PokemonUserEntity id) {
-        pokemonUserRespository.delete(id);
+    public void deleteById(Integer id) {
+        pokemonUserRespository.deleteById(id);
     }
 }

@@ -31,6 +31,6 @@ public class PokemonUserServiceImpl implements IPokemonUserService {
 
     @Override
     public void deleteById(Integer id) {
-        pokemonUserDAO.deleById(id);
+        pokemonUserDAO.deleteById(id);
     }
 }

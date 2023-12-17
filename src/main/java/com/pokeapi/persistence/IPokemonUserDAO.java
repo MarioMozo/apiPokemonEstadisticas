@@ -14,5 +14,5 @@ public interface IPokemonUserDAO {
 
     void save(PokemonUserEntity userEntity);
 
-    void deleById(Integer id);
+    void deleteById(Integer id);
 }

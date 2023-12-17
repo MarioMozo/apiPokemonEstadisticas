@@ -5,4 +5,5 @@ import com.pokeapi.entity.UserEntity;
 import org.springframework.data.repository.ListCrudRepository;
 
 public interface PokemonUserRespository extends ListCrudRepository<PokemonUserEntity, Integer> {
+
 }
