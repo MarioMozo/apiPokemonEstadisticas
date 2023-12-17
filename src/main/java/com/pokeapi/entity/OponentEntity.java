@@ -1,5 +1,5 @@
 package com.pokeapi.entity;
-import jakarta.persistence.*;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -12,19 +12,22 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "player")
-public class PlayerEntity {
+@Table(name = "oponent")
+public class OponentEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_player", nullable = false)
-    private Integer idPlayer;
-
-    @Column(nullable = false, length = 50)
-    private String username;
+    @Column(name = "id_oponent", nullable = false)
+    private Integer idOponent;
 
     @Column(nullable = false, length = 50)
     private String name;
 
+    @Column(nullable = false, length = 25)
+    private String type;
+
+    @Column(nullable = false )
+    private Integer hp;
+
     @Column(nullable = false)
-    private Integer level;
+    private Boolean winner;
+
 }

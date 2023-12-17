@@ -5,19 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+public class OponentDTO {
 
-public class PlayerDTO {
-
-        private Integer idPlayer;
-
-        private String username;
-
-        private String name;
-
-        private Integer level;
-
+    private Integer idOponent;
+    private String name;
+    private String type;
+    private Integer hp;
+    private Boolean winner;
 }

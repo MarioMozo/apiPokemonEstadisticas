@@ -32,7 +32,5 @@ public class PokemonEntity {
     @Column(name="valor_estadistica",nullable = false)
     private Integer valorEstadistica;
 
-    @OneToOne
-    @JoinColumn(name = "id_jugador", insertable = false, updatable = false)
-    private JugadorEntity jugador;
+
 }
