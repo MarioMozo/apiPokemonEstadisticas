@@ -20,7 +20,7 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
-
+    //USER CONTROLLER OK / CONTROLLER TO SEE A USER BY ID
     @GetMapping("find/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id){
         Optional<UserEntity> userOptional = userService.findById(id);
@@ -39,7 +39,7 @@ public class UserController {
         return ResponseEntity.notFound().build();
     }
 
-
+    //USER CONTROLLER OK / CONTROLLER TO SEE A LIST OF USER
     @GetMapping("/findall")
     public ResponseEntity<?> findAll(){
         List<UserDTO> userDTO = userService.findAll()
@@ -53,7 +53,7 @@ public class UserController {
                 .toList();
         return ResponseEntity.ok(userDTO);
     }
-
+    //USER CONTROLLER OK / CONTROLLER TO SAVE A USER
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody UserDTO userDTO) throws URISyntaxException {
         if (userDTO.getName().isBlank()) {
@@ -67,7 +67,7 @@ public class UserController {
                 .build());
         return ResponseEntity.created(new URI("/api/user/save")).build();
     }
-
+    //USER CONTROLLER OK / CONTROLLER TO SAVE A USER
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody UserDTO userDTO){
         Optional<UserEntity> userEntityOptional = userService.findById(id);

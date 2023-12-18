@@ -22,7 +22,7 @@ public class PokemonUserController {
 
     @Autowired
     private IPokemonUserService pokemonUserService;
-
+    //POKEMON_USER CONTROLLER OK / CONTROLLER TO SEE A POKEMON_USER BY ID
     @GetMapping("/find/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id) {
 
@@ -41,7 +41,7 @@ public class PokemonUserController {
         }
         return ResponseEntity.notFound().build();
     }
-
+    //POKEMON_USER OK / CONTROLLER TO SEE POKEMON_USER LIST
     @GetMapping("/finall")
     public ResponseEntity<?> findAll() {
         List<PokemonUserDTO> pokemonUserDTOS = pokemonUserService.findAll()
@@ -57,7 +57,7 @@ public class PokemonUserController {
                 .toList();
         return ResponseEntity.ok(pokemonUserDTOS);
     }
-
+    //POKEMON_USER OK / CONTROLLER TO SAVE A POKEMON_USER
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody PokemonUserDTO pokemonUserDTO) throws URISyntaxException {
         if (pokemonUserDTO.getName().isBlank()) {
@@ -73,7 +73,7 @@ public class PokemonUserController {
                 .build());
         return ResponseEntity.created(new URI("/api/pokemon/save")).build();
     }
-
+    //POKEMON_USER OK / CONTROLLER TO UPDATE A POKEMON_USER
     @PutMapping("/update{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody PokemonUserDTO pokemonUpdate) {
         Optional<PokemonUserEntity> pokemonUserEntityOptional = pokemonUserService.findById(id);
