@@ -16,5 +16,8 @@ public class UserDTO {
     private String name;
     private Integer timeBet;
     private Boolean winner;
+    private Integer battles;
+    private Integer victories;
+    private Integer defeats;
 
 }

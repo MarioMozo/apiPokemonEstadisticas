@@ -26,6 +26,15 @@ public class UserEntity {
     @Column(nullable = false)
     private Boolean winner;
 
+    @Column(nullable= false)
+    private Integer battles;
+
+    @Column(nullable= false)
+    private Integer victories;
+
+    @Column(nullable= false)
+    private Integer defeats;
+
 
 
 }

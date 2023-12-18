@@ -17,4 +17,7 @@ public class OponentDTO {
     private String type;
     private Integer hp;
     private Boolean winner;
+    private Integer battles;
+    private Integer victories;
+    private Integer defeats;
 }
