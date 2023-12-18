@@ -68,7 +68,7 @@ public class OponentController {
         return ResponseEntity.created(new URI("/api/oponent/save")).build();
     }
     //OPONENT CONTROLLER OK /CONTROLLER TO UPDATE AN OPONENT
-    @PutMapping("/update{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody OponentDTO oponentUpdate) {
         Optional<OponentEntity> optionalOponentEntity = oponentService.findById(id);
         if (optionalOponentEntity.isPresent()) {
