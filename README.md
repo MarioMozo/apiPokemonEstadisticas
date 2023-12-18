@@ -1,4 +1,4 @@
-# Proyect backend 
+# Proyect backend Stati
 
 Aplication Back-end Spring, Spring Boot, Gradle, Lombok, JPA y MySQL:  PokeAPI, statistics, Domain architecture
 
@@ -37,7 +37,7 @@ public class PokeApiApplication.java
 @NoArgsConstructor
 @Entity
 --------------
-#ESTRUCTURA
+#STRUCTURE
 
 ENTITY
 PERSISTENCE
