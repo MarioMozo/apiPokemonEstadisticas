@@ -85,6 +85,7 @@ public class OponentController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id){
         if (id != null){
+            oponentService.deleteById(id);
             return ResponseEntity.ok("Pokemon eliminado");
         }
         return ResponseEntity.badRequest().build();

@@ -1,13 +1,8 @@
 package com.pokeapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
-//USERENTITY OK
 
 @Setter
 @Getter
@@ -31,8 +26,6 @@ public class UserEntity {
     @Column(nullable = false)
     private Boolean winner;
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-//
-//    private List<PokemonUserEntity> pokemonList = new ArrayList<>();
+
 
 }

@@ -13,7 +13,6 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-//USERCONTROLLER OK
 
 @RestController
 @RequestMapping("/api/user")
@@ -61,6 +60,7 @@ public class UserController {
             return  ResponseEntity.badRequest().build();
         }
         userService.save(UserEntity.builder()
+                .idUser(userDTO.getIdUser())
                 .name(userDTO.getName())
                 .winner(userDTO.getWinner())
                 .timeBet(userDTO.getTimeBet())

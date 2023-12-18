@@ -64,13 +64,12 @@ public class PokemonUserController {
             return ResponseEntity.badRequest().build();
         }
         pokemonUserService.save(PokemonUserEntity.builder()
-                        .idUserPokemon(pokemonUserDTO.getIdUserPokemon())
-                        .name(pokemonUserDTO.getName())
-                        .type(pokemonUserDTO.getType())
-                        .moves(pokemonUserDTO.getMoves())
-                        .hp(pokemonUserDTO.getHp())
-                        .winner(pokemonUserDTO.getWinner())
-
+                .idUserPokemon(pokemonUserDTO.getIdUserPokemon())
+                .name(pokemonUserDTO.getName())
+                .type(pokemonUserDTO.getType())
+                .moves(pokemonUserDTO.getMoves())
+                .hp(pokemonUserDTO.getHp())
+                .winner(pokemonUserDTO.getWinner())
                 .build());
         return ResponseEntity.created(new URI("/api/pokemon/save")).build();
     }
@@ -86,6 +85,7 @@ public class PokemonUserController {
             pokemon.setMoves(pokemonUpdate.getMoves());
             pokemon.setHp(pokemonUpdate.getHp());
             pokemon.setWinner(pokemonUpdate.getWinner());
+            pokemonUserService.save(pokemon);
             return ResponseEntity.ok("Pokemon de usuario actualizado");
         }
         return ResponseEntity.notFound().build();
