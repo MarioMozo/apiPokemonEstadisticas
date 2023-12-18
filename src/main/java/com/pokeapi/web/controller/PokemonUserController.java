@@ -36,6 +36,7 @@ public class PokemonUserController {
                     .moves(pokemon.getMoves())
                     .hp(pokemon.getHp())
                     .winner(pokemon.getWinner())
+                    .idUser(pokemon.getIdUser())
                     .build();
             return ResponseEntity.ok(pokemonUserDTO);
         }
@@ -70,11 +71,12 @@ public class PokemonUserController {
                 .moves(pokemonUserDTO.getMoves())
                 .hp(pokemonUserDTO.getHp())
                 .winner(pokemonUserDTO.getWinner())
+                .idUser(pokemonUserDTO.getIdUser())
                 .build());
         return ResponseEntity.created(new URI("/api/pokemon/save")).build();
     }
     //POKEMON_USER OK / CONTROLLER TO UPDATE A POKEMON_USER
-    @PutMapping("/update{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody PokemonUserDTO pokemonUpdate) {
         Optional<PokemonUserEntity> pokemonUserEntityOptional = pokemonUserService.findById(id);
         if (pokemonUserEntityOptional.isPresent()) {
@@ -85,6 +87,7 @@ public class PokemonUserController {
             pokemon.setMoves(pokemonUpdate.getMoves());
             pokemon.setHp(pokemonUpdate.getHp());
             pokemon.setWinner(pokemonUpdate.getWinner());
+            pokemon.setIdUser(pokemonUpdate.getIdUser());
             pokemonUserService.save(pokemon);
             return ResponseEntity.ok("Pokemon de usuario actualizado");
         }

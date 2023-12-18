@@ -33,8 +33,11 @@ public class PokemonUserEntity {
     @Column(nullable = false)
     private Boolean winner;
 
+    @Column(name = "id_user", nullable = false)
+    private Integer idUser;
+
     @ManyToOne
-    @JoinColumn(name = "id_user", nullable = false)
+    @JoinColumn(name = "id_user",referencedColumnName = "id_user",insertable = false,updatable = false)
     private UserEntity user;
 
 }

@@ -24,4 +24,5 @@ public class PokemonUserDTO {
 
     private Boolean winner;
 
+    private Integer idUser;
 }
