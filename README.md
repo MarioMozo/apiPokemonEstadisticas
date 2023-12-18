@@ -1,4 +1,4 @@
-# Project backend Statistics
+# Project Backend Statistics
 
 Aplication Back-end Spring, Spring Boot, Gradle, Lombok, JPA y MySQL:  PokeAPI, statistics, Domain architecture
 
