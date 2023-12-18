@@ -30,9 +30,6 @@ public class OponentController {
                     .name(oponent.getName())
                     .type(oponent.getType())
                     .hp(oponent.getHp())
-                    .winner(oponent.getWinner())
-                    .battles(oponent.getBattles())
-                    .battles(oponent.getVictories())
                     .battles(oponent.getDefeats())
                     .build();
             return ResponseEntity.ok(oponentDTO);
@@ -51,9 +48,6 @@ public class OponentController {
                         .type(oponent.getType())
                         .hp(oponent.getHp())
                         .winner(oponent.getWinner())
-                        .battles(oponent.getBattles())
-                        .battles(oponent.getVictories())
-                        .battles(oponent.getDefeats())
                         .build())
                 .toList();
         return ResponseEntity.ok(oponentDTOList);
@@ -70,9 +64,6 @@ public class OponentController {
                 .type(oponentDTO.getType())
                 .hp(oponentDTO.getHp())
                 .winner(oponentDTO.getWinner())
-                        .battles(oponentDTO.getBattles())
-                        .victories(oponentDTO.getVictories())
-                        .defeats(oponentDTO.getDefeats())
                 .build());
         return ResponseEntity.created(new URI("/api/oponent/save")).build();
     }
@@ -87,9 +78,6 @@ public class OponentController {
             oponent.setType(oponentUpdate.getType());
             oponent.setHp(oponentUpdate.getHp());
             oponent.setWinner(oponentUpdate.getWinner());
-            oponent.setBattles(oponentUpdate.getBattles());
-            oponent.setVictories(oponentUpdate.getVictories());
-            oponent.setDefeats(oponentUpdate.getDefeats());
             oponentService.save(oponent);
             return ResponseEntity.ok("Pokemon actualizado");
         }

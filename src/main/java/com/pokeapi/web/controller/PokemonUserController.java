@@ -1,11 +1,10 @@
 package com.pokeapi.web.controller;
 
 
-import com.pokeapi.entity.OponentEntity;
 import com.pokeapi.entity.PokemonUserEntity;
-import com.pokeapi.repository.PokemonUserRespository;
+
 import com.pokeapi.service.IPokemonUserService;
-import com.pokeapi.web.controller.dto.OponentDTO;
+
 import com.pokeapi.web.controller.dto.PokemonUserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -36,9 +35,6 @@ public class PokemonUserController {
                     .moves(pokemon.getMoves())
                     .hp(pokemon.getHp())
                     .winner(pokemon.getWinner())
-                    .battles(pokemon.getBattles())
-                    .victories(pokemon.getVictories())
-                    .defeats(pokemon.getDefeats())
                     .build();
             return ResponseEntity.ok(pokemonUserDTO);
         }
@@ -56,9 +52,6 @@ public class PokemonUserController {
                         .moves(pokemon.getMoves())
                         .hp(pokemon.getHp())
                         .winner(pokemon.getWinner())
-                        .battles(pokemon.getBattles())
-                        .victories(pokemon.getVictories())
-                        .defeats(pokemon.getDefeats())
                         .build())
                 .toList();
         return ResponseEntity.ok(pokemonUserDTOS);
@@ -76,9 +69,6 @@ public class PokemonUserController {
                 .moves(pokemonUserDTO.getMoves())
                 .hp(pokemonUserDTO.getHp())
                 .winner(pokemonUserDTO.getWinner())
-                        .battles(pokemonUserDTO.getBattles())
-                        .victories(pokemonUserDTO.getVictories())
-                        .defeats(pokemonUserDTO.getDefeats())
                 .build());
         return ResponseEntity.created(new URI("/api/pokemon/save")).build();
     }
@@ -94,9 +84,6 @@ public class PokemonUserController {
             pokemon.setMoves(pokemonUpdate.getMoves());
             pokemon.setHp(pokemonUpdate.getHp());
             pokemon.setWinner(pokemonUpdate.getWinner());
-            pokemon.setBattles(pokemonUpdate.getBattles());
-            pokemon.setVictories(pokemonUpdate.getVictories());
-            pokemon.setDefeats(pokemonUpdate.getDefeats());
             pokemonUserService.save(pokemon);
             return ResponseEntity.ok("Pokemon de usuario actualizado");
         }
