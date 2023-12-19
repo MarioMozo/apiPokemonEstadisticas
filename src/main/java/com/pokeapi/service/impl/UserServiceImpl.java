@@ -16,11 +16,14 @@ public class UserServiceImpl implements IUserService {
     private IUserDAO userDAO;
 
     @Override
-    public List<UserEntity> findAll() {return userDAO.findAll();}
+    public List<UserEntity> findAll() {
+        return userDAO.findAll();
+    }
 
     @Override
     public Optional<UserEntity> findById(Integer id){
-        return userDAO.findById(id);}
+        return userDAO.findById(id);
+    }
 
     @Override
     public void save(UserEntity userEntity){

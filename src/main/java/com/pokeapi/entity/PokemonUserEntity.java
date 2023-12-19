@@ -43,6 +43,4 @@ public class PokemonUserEntity {
     private Integer defeats;
 
 
-
-
 }
