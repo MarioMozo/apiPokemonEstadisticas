@@ -3,7 +3,12 @@ package com.pokeapi.web.controller;
 import com.pokeapi.entity.OponentEntity;
 import com.pokeapi.service.IOponentService;
 import com.pokeapi.web.controller.dto.OponentDTO;
+import com.pokeapi.web.controller.dto.PokemonUserDTO;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +24,17 @@ public class OponentController {
 
     @Autowired
     private IOponentService oponentService;
+    //swagger
     @Operation(summary = "OPPONENT CONTROLLER OK /CONTROLLER TO SEE AN OPPONENT BY ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "OPONENT ID SUCCESSFULLY FOUND",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = OponentDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "ID INVALID",content = @Content)
+    })
+    // fin swagger
     @GetMapping("/find/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id) {
 

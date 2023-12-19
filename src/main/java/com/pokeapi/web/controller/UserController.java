@@ -5,7 +5,12 @@ import com.pokeapi.entity.UserEntity;
 import com.pokeapi.service.IUserService;
 import com.pokeapi.web.controller.dto.UserDTO;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +26,17 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
+    //swagger
     @Operation(summary = "USER CONTROLLER OK / CONTROLLER TO SEE A USER BY ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "USER ID SUCCESSFULLY FOUND",
+            content = {
+                    @Content(mediaType = "application/json",
+                    schema = @Schema(implementation =UserDTO.class ))
+            }),
+            @ApiResponse(responseCode = "500",description = "ID INVALID",content = @Content)
+    })
+  // fin swagger
     @GetMapping("find/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id){
         Optional<UserEntity> userOptional = userService.findById(id);

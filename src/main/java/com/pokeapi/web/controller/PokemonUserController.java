@@ -6,7 +6,12 @@ import com.pokeapi.entity.PokemonUserEntity;
 import com.pokeapi.service.IPokemonUserService;
 
 import com.pokeapi.web.controller.dto.PokemonUserDTO;
+import com.pokeapi.web.controller.dto.UserDTO;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +27,17 @@ public class PokemonUserController {
 
     @Autowired
     private IPokemonUserService pokemonUserService;
+    //swagger
     @Operation(summary = "POKEMON_USER CONTROLLER OK / CONTROLLER TO SEE A POKEMON_USER BY ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "POKEMON ID SUCCESSFULLY FOUND",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = PokemonUserDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "ID INVALID",content = @Content)
+    })
+    // fin swagger
     @GetMapping("/find/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id) {
 
