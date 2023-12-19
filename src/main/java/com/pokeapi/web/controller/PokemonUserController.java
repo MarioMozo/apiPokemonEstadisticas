@@ -104,6 +104,15 @@ public class PokemonUserController {
     }
     //swagger
     @Operation(summary = "POKEMON_USER OK / CONTROLLER TO UPDATE A POKEMON_USER")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "POKEMON UPDATE",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation =PokemonUserDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "PARAMETER ERROR",content = @Content),
+            @ApiResponse(responseCode = "400",description = "RESPONSE ERROR",content = @Content)
+    })
     //fin de swagger
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody PokemonUserDTO pokemonUpdate) {

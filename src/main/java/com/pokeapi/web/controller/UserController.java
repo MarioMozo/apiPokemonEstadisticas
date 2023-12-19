@@ -97,6 +97,15 @@ public class UserController {
     }
     //swagger
     @Operation(summary = "USER CONTROLLER OK / CONTROLLER TO SAVE A USER")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "USER UPDATE",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation =UserDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "PARAMETER ERROR",content = @Content),
+            @ApiResponse(responseCode = "400",description = "RESPONSE ERROR",content = @Content)
+    })
     //fin de swagger
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody UserDTO userDTO){

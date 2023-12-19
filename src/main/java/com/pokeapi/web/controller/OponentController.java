@@ -99,6 +99,15 @@ public class OponentController {
     }
     //swagger
     @Operation(summary = "OPONENT CONTROLLER OK /CONTROLLER TO UPDATE AN OPONENT")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "OPONENT UPDATE",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation =OponentDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "PARAMETER ERROR",content = @Content),
+            @ApiResponse(responseCode = "400",description = "RESPONSE ERROR",content = @Content)
+    })
     //fin de swagger
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody OponentDTO oponentUpdate) {
@@ -117,6 +126,14 @@ public class OponentController {
     }
     //swagger
     @Operation(summary = "OPONENT CONTROLLER OK / CONTROLLER TO ELIMINATE AN OPPONENT")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "OPONENT DELATE",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation =OponentDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "PARAMETER ERROR",content = @Content)
+    })
     //fin de swagger
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id){
