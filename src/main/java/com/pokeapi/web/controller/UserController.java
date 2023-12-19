@@ -54,8 +54,9 @@ public class UserController {
         }
         return ResponseEntity.notFound().build();
     }
-
+    //swagger
     @Operation(summary = "USER CONTROLLER OK / CONTROLLER TO SEE A LIST OF USER")
+    //fin de swagger
     @GetMapping("/findall")
     public ResponseEntity<?> findAll(){
         List<UserDTO> userDTO = userService.findAll()
@@ -69,7 +70,9 @@ public class UserController {
                 .toList();
         return ResponseEntity.ok(userDTO);
     }
+    //swagger
     @Operation(summary = "USER CONTROLLER OK / CONTROLLER TO SAVE A USER")
+    //fin de swagger
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody UserDTO userDTO) throws URISyntaxException {
         if (userDTO.getName().isBlank()) {
@@ -83,7 +86,9 @@ public class UserController {
                 .build());
         return ResponseEntity.created(new URI("/api/user/save")).build();
     }
+    //swagger
     @Operation(summary = "USER CONTROLLER OK / CONTROLLER TO SAVE A USER")
+    //fin de swagger
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody UserDTO userDTO){
         Optional<UserEntity> userEntityOptional = userService.findById(id);

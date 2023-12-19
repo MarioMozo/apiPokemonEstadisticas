@@ -53,7 +53,9 @@ public class OponentController {
         }
         return ResponseEntity.notFound().build();
     }
+    //swagger
     @Operation(summary = "CONTROLLER OPPONENT OK / CONTROLLER TO SEE LIST OF OPPONENTS")
+    //fin de swagger
     @GetMapping("/finall")
     public ResponseEntity<?> findAll() {
         List<OponentDTO> oponentDTOList = oponentService.findAll()
@@ -68,7 +70,9 @@ public class OponentController {
                 .toList();
         return ResponseEntity.ok(oponentDTOList);
     }
+    //swagger
     @Operation(summary = "OPONENT CONTROLLER OK /CONTROLLER TO SAVE AN OPONENT")
+    //fn de swagger
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody OponentDTO oponentDTO) throws URISyntaxException {
         if (oponentDTO.getName().isBlank()) {
@@ -83,7 +87,9 @@ public class OponentController {
                 .build());
         return ResponseEntity.created(new URI("/api/oponent/save")).build();
     }
+    //swagger
     @Operation(summary = "OPONENT CONTROLLER OK /CONTROLLER TO UPDATE AN OPONENT")
+    //fin de swagger
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody OponentDTO oponentUpdate) {
         Optional<OponentEntity> optionalOponentEntity = oponentService.findById(id);
@@ -99,7 +105,9 @@ public class OponentController {
         }
         return ResponseEntity.notFound().build();
     }
+    //swagger
     @Operation(summary = "OPONENT CONTROLLER OK / CONTROLLER TO ELIMINATE AN OPPONENT")
+    //fin de swagger
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id){
         if (id != null){

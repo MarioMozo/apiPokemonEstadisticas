@@ -20,8 +20,9 @@ public class HistoryController {
     @Autowired
     private IHistoryService historyService;
 
-
+    //swagger
     @Operation(summary = "ENDPOINT TO SHOW IN THE STATISTICS FRONTEND")
+    //fin de swagger
     // http://localhost:8080/api/historial/findall
     @GetMapping("/findall")
     public ResponseEntity<?> findAll(){
@@ -47,8 +48,9 @@ public class HistoryController {
                 .toList();
         return ResponseEntity.ok(historialEntity);
     }
-
+    //swagger
     @Operation(summary = "ENDPOINT FOR BATTLE NODEJS TEAM")
+    //fin de swagger
     //http://localhost:8080/api/historial/save
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody HistoryDTO historyDTO) throws URISyntaxException {
