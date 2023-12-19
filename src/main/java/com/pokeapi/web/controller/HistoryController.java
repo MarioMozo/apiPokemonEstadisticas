@@ -3,7 +3,6 @@ package com.pokeapi.web.controller;
 import com.pokeapi.entity.HistoryEntity;
 import com.pokeapi.service.IHistoryService;
 import com.pokeapi.web.controller.dto.HistoryDTO;
-import com.pokeapi.web.controller.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +29,7 @@ public class HistoryController {
                         .idUser(historial.getIdUser())
                         .nameUser(historial.getNameUser())
                         .timeBetUser(historial.getTimeBetUser())
-                        .winnerUser(historial.getWinnerUser())
+                        .isWinnerUser(historial.getIsWinnerUser())
                         .idUserPokemon(historial.getIdUserPokemon())
                         .namePokemon(historial.getNamePokemon())
                         .typeOponent(historial.getTypeOponent())
@@ -38,7 +37,7 @@ public class HistoryController {
                         .hpOponent(historial.getHpOponent())
                         .winnerOponent(historial.getWinnerOponent())
                         .idOponent(historial.getIdOponent())
-                        .nameOponent(historial.getNameOponent())
+                        .isOponentUser(historial.getIsOponentUser())
                         .typePokemon(historial.getTypePokemon())
                         .hpPokemon(historial.getHpPokemon())
                         .winnerPokemon(historial.getWinnerPokemon())
@@ -55,10 +54,9 @@ public class HistoryController {
             return  ResponseEntity.badRequest().build();
         }
         historyService.save(HistoryEntity.builder()
-                .idUser(historyDTO.getIdUser())
                 .nameUser(historyDTO.getNameUser())
                 .timeBetUser(historyDTO.getTimeBetUser())
-                .winnerUser(historyDTO.getWinnerUser())
+                .isWinnerUser(historyDTO.getIsWinnerUser())
                 .idUserPokemon(historyDTO.getIdUserPokemon())
                 .namePokemon(historyDTO.getNamePokemon())
                 .typePokemon(historyDTO.getTypePokemon())
@@ -66,7 +64,7 @@ public class HistoryController {
                 .hpPokemon(historyDTO.getHpPokemon())
                 .winnerPokemon(historyDTO.getWinnerPokemon())
                 .idOponent(historyDTO.getIdOponent())
-                .nameOponent(historyDTO.getNameOponent())
+                .isOponentUser(historyDTO.getIsOponentUser())
                 .typeOponent(historyDTO.getTypeOponent())
                 .hpOponent(historyDTO.getHpOponent())
                 .winnerOponent(historyDTO.getWinnerOponent())

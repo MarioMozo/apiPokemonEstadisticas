@@ -17,7 +17,7 @@ public class HistoryDTO {
 
     private Integer timeBetUser;
 
-    private Boolean winnerUser;
+    private Boolean isWinnerUser;
 
     private Integer idUserPokemon;
 
@@ -33,7 +33,7 @@ public class HistoryDTO {
 
     private Integer idOponent;
 
-    private String nameOponent;
+    private String isOponentUser;
 
     private String typeOponent;
 

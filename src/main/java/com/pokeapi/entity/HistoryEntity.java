@@ -15,6 +15,7 @@ public class HistoryEntity {
 
     @Id
     @Column(name = "id_user", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idUser;
 
     @Column(nullable = false, length = 50)
@@ -24,7 +25,7 @@ public class HistoryEntity {
     private Integer timeBetUser;
 
     @Column(nullable = false)
-    private Boolean winnerUser;
+    private Boolean isWinnerUser;
 
 
     @Column(name = "id_user_pokemon", nullable = false)
@@ -50,7 +51,7 @@ public class HistoryEntity {
     private Integer idOponent;
 
     @Column(nullable = false, length = 50)
-    private String nameOponent;
+    private String isOponentUser;
 
     @Column(nullable = false, length = 25)
     private String typeOponent;
