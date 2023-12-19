@@ -6,6 +6,12 @@ import com.pokeapi.entity.PokemonUserEntity;
 import com.pokeapi.service.IPokemonUserService;
 
 import com.pokeapi.web.controller.dto.PokemonUserDTO;
+import com.pokeapi.web.controller.dto.UserDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +27,17 @@ public class PokemonUserController {
 
     @Autowired
     private IPokemonUserService pokemonUserService;
-    //POKEMON_USER CONTROLLER OK / CONTROLLER TO SEE A POKEMON_USER BY ID
+    //swagger
+    @Operation(summary = "POKEMON_USER CONTROLLER OK / CONTROLLER TO SEE A POKEMON_USER BY ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "POKEMON ID SUCCESSFULLY FOUND",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = PokemonUserDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "ID INVALID",content = @Content)
+    })
+    // fin swagger
     @GetMapping("/find/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id) {
 
@@ -40,7 +56,10 @@ public class PokemonUserController {
         }
         return ResponseEntity.notFound().build();
     }
-    //POKEMON_USER OK / CONTROLLER TO SEE POKEMON_USER LIST
+    //swagger
+    @Operation(summary = "POKEMON_USER OK / CONTROLLER TO SEE POKEMON_USER LIST")
+
+    //fin de swagger
     @GetMapping("/finall")
     public ResponseEntity<?> findAll() {
         List<PokemonUserDTO> pokemonUserDTOS = pokemonUserService.findAll()
@@ -56,7 +75,18 @@ public class PokemonUserController {
                 .toList();
         return ResponseEntity.ok(pokemonUserDTOS);
     }
-    //POKEMON_USER OK / CONTROLLER TO SAVE A POKEMON_USER
+    //swagger
+    @Operation(summary = "POKEMON_USER OK / CONTROLLER TO SAVE A POKEMON_USER")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "POKEMON SUCCESSFULLY CREATED",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation =PokemonUserDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "PARAMETER ERROR",content = @Content),
+            @ApiResponse(responseCode = "400",description = "RESPONSE ERROR",content = @Content)
+    })
+    //fin de swagger
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody PokemonUserDTO pokemonUserDTO) throws URISyntaxException {
         if (pokemonUserDTO.getName().isBlank()) {
@@ -72,7 +102,9 @@ public class PokemonUserController {
                 .build());
         return ResponseEntity.created(new URI("/api/pokemon/save")).build();
     }
-    //POKEMON_USER OK / CONTROLLER TO UPDATE A POKEMON_USER
+    //swagger
+    @Operation(summary = "POKEMON_USER OK / CONTROLLER TO UPDATE A POKEMON_USER")
+    //fin de swagger
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody PokemonUserDTO pokemonUpdate) {
         Optional<PokemonUserEntity> pokemonUserEntityOptional = pokemonUserService.findById(id);
