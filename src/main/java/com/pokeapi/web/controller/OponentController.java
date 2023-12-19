@@ -4,6 +4,7 @@ import com.pokeapi.entity.OponentEntity;
 import com.pokeapi.service.IOponentService;
 import com.pokeapi.web.controller.dto.OponentDTO;
 import com.pokeapi.web.controller.dto.PokemonUserDTO;
+import com.pokeapi.web.controller.dto.UserDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -72,6 +73,15 @@ public class OponentController {
     }
     //swagger
     @Operation(summary = "OPONENT CONTROLLER OK /CONTROLLER TO SAVE AN OPONENT")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "OPONENT SUCCESSFULLY CREATED",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = OponentDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "PARAMETER ERROR",content = @Content),
+            @ApiResponse(responseCode = "400",description = "RESPONSE ERROR",content = @Content)
+    })
     //fn de swagger
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody OponentDTO oponentDTO) throws URISyntaxException {

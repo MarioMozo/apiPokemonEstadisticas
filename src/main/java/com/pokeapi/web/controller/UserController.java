@@ -72,7 +72,16 @@ public class UserController {
     }
     //swagger
     @Operation(summary = "USER CONTROLLER OK / CONTROLLER TO SAVE A USER")
-    //fin de swagger
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "USER SUCCESSFULLY CREATED",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation =UserDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "PARAMETER ERROR",content = @Content),
+            @ApiResponse(responseCode = "400",description = "RESPONSE ERROR",content = @Content)
+    })
+    // fin swagger
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody UserDTO userDTO) throws URISyntaxException {
         if (userDTO.getName().isBlank()) {

@@ -58,6 +58,7 @@ public class PokemonUserController {
     }
     //swagger
     @Operation(summary = "POKEMON_USER OK / CONTROLLER TO SEE POKEMON_USER LIST")
+
     //fin de swagger
     @GetMapping("/finall")
     public ResponseEntity<?> findAll() {
@@ -76,6 +77,15 @@ public class PokemonUserController {
     }
     //swagger
     @Operation(summary = "POKEMON_USER OK / CONTROLLER TO SAVE A POKEMON_USER")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "POKEMON SUCCESSFULLY CREATED",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation =PokemonUserDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "PARAMETER ERROR",content = @Content),
+            @ApiResponse(responseCode = "400",description = "RESPONSE ERROR",content = @Content)
+    })
     //fin de swagger
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody PokemonUserDTO pokemonUserDTO) throws URISyntaxException {

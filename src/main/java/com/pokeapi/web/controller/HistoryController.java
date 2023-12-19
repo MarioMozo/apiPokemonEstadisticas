@@ -5,6 +5,10 @@ import com.pokeapi.service.IHistoryService;
 import com.pokeapi.web.controller.dto.HistoryDTO;
 import com.pokeapi.web.controller.dto.UserDTO;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -50,6 +54,15 @@ public class HistoryController {
     }
     //swagger
     @Operation(summary = "ENDPOINT FOR BATTLE NODEJS TEAM")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "HISTORY SUCCESSFULLY CREATED",
+                    content = {
+                            @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation =HistoryDTO.class ))
+                    }),
+            @ApiResponse(responseCode = "500",description = "PARAMETER ERROR",content = @Content),
+            @ApiResponse(responseCode = "400",description = "RESPONSE ERROR",content = @Content)
+    })
     //fin de swagger
     //http://localhost:8080/api/historial/save
     @PostMapping("/save")
