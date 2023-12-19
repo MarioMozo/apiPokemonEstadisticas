@@ -21,6 +21,7 @@ public class HistoryController {
 
 
     // ENDPOINT PARA MOSTRAR EN EL FRONTEND DE ESTADISTICAS
+    // http://localhost:8080/api/historial/findall
     @GetMapping("/findall")
     public ResponseEntity<?> findAll(){
         List<HistoryDTO> historialEntity = historyService.findAll()
@@ -46,7 +47,8 @@ public class HistoryController {
         return ResponseEntity.ok(historialEntity);
     }
 
-
+    //ENDPOINT PARA EQUIPO NODEJS DE BATALLAS
+    //http://localhost:8080/api/historial/save
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody HistoryDTO historyDTO) throws URISyntaxException {
         if (historyDTO.getNameUser().isBlank()) {
