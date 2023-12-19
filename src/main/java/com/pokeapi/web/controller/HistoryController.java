@@ -4,6 +4,7 @@ import com.pokeapi.entity.HistoryEntity;
 import com.pokeapi.service.IHistoryService;
 import com.pokeapi.web.controller.dto.HistoryDTO;
 import com.pokeapi.web.controller.dto.UserDTO;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class HistoryController {
     private IHistoryService historyService;
 
 
-    // ENDPOINT PARA MOSTRAR EN EL FRONTEND DE ESTADISTICAS
+    @Operation(summary = "ENDPOINT TO SHOW IN THE STATISTICS FRONTEND")
     // http://localhost:8080/api/historial/findall
     @GetMapping("/findall")
     public ResponseEntity<?> findAll(){
@@ -47,7 +48,7 @@ public class HistoryController {
         return ResponseEntity.ok(historialEntity);
     }
 
-    //ENDPOINT PARA EQUIPO NODEJS DE BATALLAS
+    @Operation(summary = "ENDPOINT FOR BATTLE NODEJS TEAM")
     //http://localhost:8080/api/historial/save
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody HistoryDTO historyDTO) throws URISyntaxException {

@@ -3,6 +3,7 @@ package com.pokeapi.web.controller;
 import com.pokeapi.entity.OponentEntity;
 import com.pokeapi.service.IOponentService;
 import com.pokeapi.web.controller.dto.OponentDTO;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class OponentController {
 
     @Autowired
     private IOponentService oponentService;
-    //OPPONENT CONTROLLER OK /CONTROLLER TO SEE AN OPPONENT BY ID
+    @Operation(summary = "OPPONENT CONTROLLER OK /CONTROLLER TO SEE AN OPPONENT BY ID")
     @GetMapping("/find/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id) {
 
@@ -37,7 +38,7 @@ public class OponentController {
         }
         return ResponseEntity.notFound().build();
     }
-    //CONTROLLER OPPONENT OK / CONTROLLER TO SEE LIST OF OPPONENTS
+    @Operation(summary = "CONTROLLER OPPONENT OK / CONTROLLER TO SEE LIST OF OPPONENTS")
     @GetMapping("/finall")
     public ResponseEntity<?> findAll() {
         List<OponentDTO> oponentDTOList = oponentService.findAll()
@@ -52,7 +53,7 @@ public class OponentController {
                 .toList();
         return ResponseEntity.ok(oponentDTOList);
     }
-    //OPONENT CONTROLLER OK /CONTROLLER TO SAVE AN OPONENT
+    @Operation(summary = "OPONENT CONTROLLER OK /CONTROLLER TO SAVE AN OPONENT")
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody OponentDTO oponentDTO) throws URISyntaxException {
         if (oponentDTO.getName().isBlank()) {
@@ -67,7 +68,7 @@ public class OponentController {
                 .build());
         return ResponseEntity.created(new URI("/api/oponent/save")).build();
     }
-    //OPONENT CONTROLLER OK /CONTROLLER TO UPDATE AN OPONENT
+    @Operation(summary = "OPONENT CONTROLLER OK /CONTROLLER TO UPDATE AN OPONENT")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody OponentDTO oponentUpdate) {
         Optional<OponentEntity> optionalOponentEntity = oponentService.findById(id);
@@ -83,7 +84,7 @@ public class OponentController {
         }
         return ResponseEntity.notFound().build();
     }
-    //OPONENT CONTROLLER OK / CONTROLLER TO ELIMINATE AN OPPONENT
+    @Operation(summary = "OPONENT CONTROLLER OK / CONTROLLER TO ELIMINATE AN OPPONENT")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id){
         if (id != null){
