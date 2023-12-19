@@ -19,22 +19,16 @@ public class OponentServiceImpl implements IOponentService {
     public List<OponentEntity> findAll() {
         return oponentDAO.findAll();
     }
-
-
-
     @Override
     public Optional<OponentEntity> findById(Integer id) {
         return oponentDAO.findById(id);
     }
-
     @Override
     public void save(OponentEntity oponent) {
         oponentDAO.save(oponent);
     }
-
     @Override
     public void deleteById(Integer id) {
         oponentDAO.deleteById(id);
-
     }
 }
