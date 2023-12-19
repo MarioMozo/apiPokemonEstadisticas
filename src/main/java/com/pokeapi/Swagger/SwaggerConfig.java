@@ -16,6 +16,7 @@ public class SwaggerConfig {
                 .description("Aplication Back-end Spring, Spring Boot, Gradle, Lombok, JPA y MySQL: PokeAPI, statistics, Domain architecture")
                 .contact(new Contact().name("Github").url("https://github.com/MarioMozo/apiPokemonEstadisticas")));
 
+      // url swagger  http://localhost:8080/swagger-ui/index.html
     }
 
 }
