@@ -37,4 +37,7 @@ public class UserEntity {
     @Column(nullable= false)
     private Integer defeats;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<PokemonUserEntity> pokemonList;
+
 }
