@@ -3,6 +3,8 @@ package com.pokeapi.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 
 @Setter
 @Getter
@@ -34,7 +36,5 @@ public class UserEntity {
 
     @Column(nullable= false)
     private Integer defeats;
-
-
 
 }

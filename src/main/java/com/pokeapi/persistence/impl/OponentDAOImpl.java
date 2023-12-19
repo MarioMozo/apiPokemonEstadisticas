@@ -34,6 +34,5 @@ public class OponentDAOImpl implements IOponentDAO {
     @Override
     public void deleteById(Integer id) {
         oponentRepository.deleteById(id);
-
     }
 }
