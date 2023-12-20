@@ -42,10 +42,5 @@ public class PokemonUserEntity {
     @Column(nullable= false)
     private Integer defeats;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private UserEntity user;
 
-    @OneToOne(mappedBy = "pokemonUser", cascade = CascadeType.ALL)
-    private OponentEntity oponent;
 }

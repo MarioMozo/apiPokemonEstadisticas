@@ -78,7 +78,7 @@ public class PokemonUserController {
     //swagger
     @Operation(summary = "POKEMON_USER OK / CONTROLLER TO SAVE A POKEMON_USER")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",description = "POKEMON SUCCESSFULLY CREATED",
+            @ApiResponse(responseCode = "201",description = "POKEMON SUCCESSFULLY CREATED",
                     content = {
                             @Content(mediaType = "application/json",
                                     schema = @Schema(implementation =PokemonUserDTO.class ))

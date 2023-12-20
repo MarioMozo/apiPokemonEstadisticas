@@ -73,7 +73,7 @@ public class UserController {
     //swagger
     @Operation(summary = "USER CONTROLLER OK / CONTROLLER TO SAVE A USER")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",description = "USER SUCCESSFULLY CREATED",
+            @ApiResponse(responseCode = "201",description = "USER SUCCESSFULLY CREATED",
                     content = {
                             @Content(mediaType = "application/json",
                                     schema = @Schema(implementation =UserDTO.class ))
@@ -96,7 +96,7 @@ public class UserController {
         return ResponseEntity.created(new URI("/api/user/save")).build();
     }
     //swagger
-    @Operation(summary = "USER CONTROLLER OK / CONTROLLER TO SAVE A USER")
+    @Operation(summary = "USER CONTROLLER OK / CONTROLLER TO UPDATE A USER")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",description = "USER UPDATE",
                     content = {

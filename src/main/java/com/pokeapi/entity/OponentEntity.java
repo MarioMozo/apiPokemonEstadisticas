@@ -36,8 +36,6 @@ public class OponentEntity {
     @Column(nullable= false)
     private Integer defeats;
 
-    @OneToOne
-    @JoinColumn(name = "pokemon_user_id", nullable = false)
-    private PokemonUserEntity pokemonUser;
+
 
 }

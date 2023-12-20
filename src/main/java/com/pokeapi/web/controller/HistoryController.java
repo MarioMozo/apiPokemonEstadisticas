@@ -55,7 +55,7 @@ public class HistoryController {
     //swagger
     @Operation(summary = "ENDPOINT FOR BATTLE NODEJS TEAM")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",description = "HISTORY SUCCESSFULLY CREATED",
+            @ApiResponse(responseCode = "201",description = "HISTORY SUCCESSFULLY CREATED",
                     content = {
                             @Content(mediaType = "application/json",
                                     schema = @Schema(implementation =HistoryDTO.class ))

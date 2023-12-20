@@ -74,7 +74,7 @@ public class OponentController {
     //swagger
     @Operation(summary = "OPONENT CONTROLLER OK /CONTROLLER TO SAVE AN OPONENT")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",description = "OPONENT SUCCESSFULLY CREATED",
+            @ApiResponse(responseCode = "201",description = "OPONENT SUCCESSFULLY CREATED",
                     content = {
                             @Content(mediaType = "application/json",
                                     schema = @Schema(implementation = OponentDTO.class ))
