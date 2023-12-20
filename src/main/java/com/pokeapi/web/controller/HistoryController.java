@@ -86,7 +86,7 @@ public class HistoryController {
                         .hpOpntPokemon(historyDTO.getHpOpntPokemon())
                         .numberTurns(historyDTO.getNumberTurns())
                 .build());
-        return ResponseEntity.created(new URI("/api/historial/save")).build();
+        return ResponseEntity.created(new URI("/api/history/save")).build();
 
 
     }
