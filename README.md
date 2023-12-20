@@ -8,44 +8,7 @@ Java 17
 MySQL 8.0
 Postman
 
-"Installation of IntelliJ IDEA IDE with the mentioned dependencies.
 
-"Database configuration in the 'application.properties' file."
-
-
-```bash
-Start:
-
-Configuration of application.properties"
-
-spring.datasource.username= username
-spring.datasource.password= password
-
-public class PokeApiApplication.java
-
-
-## Usage
-
-
-@SpringBootApplication
-@EnableJpaRepositories
-
-@Setter
-@Getter
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
---------------
-#STRUCTURE
-
-ENTITY
-PERSISTENCE
-REPOSITORY
-SERVICE
-CONTROLLER
-
-```
 ##
 ENDPOINT FOR BATTLE NODEJS TEAM
 
@@ -103,6 +66,45 @@ numberTurns	integer
 
   
 }
+
+"Installation of IntelliJ IDEA IDE with the mentioned dependencies.
+
+"Database configuration in the 'application.properties' file."
+
+
+```bash
+Start:
+
+Configuration of application.properties"
+
+spring.datasource.username= username
+spring.datasource.password= password
+
+public class PokeApiApplication.java
+
+
+## Usage
+
+
+@SpringBootApplication
+@EnableJpaRepositories
+
+@Setter
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+--------------
+#STRUCTURE
+
+ENTITY
+PERSISTENCE
+REPOSITORY
+SERVICE
+CONTROLLER
+
+```
 
 ## Contributing
 
