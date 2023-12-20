@@ -18,7 +18,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/historial")
+@RequestMapping("/api/history")
 public class HistoryController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class HistoryController {
     //swagger
     @Operation(summary = "ENDPOINT TO SHOW IN THE STATISTICS FRONTEND")
     //fin de swagger
-    // http://localhost:8080/api/historial/findall
+    // http://localhost:8091/api/history/findall
     @GetMapping("/findall")
     public ResponseEntity<?> findAll(){
         List<HistoryDTO> historialEntity = historyService.findAll()
@@ -64,7 +64,7 @@ public class HistoryController {
             @ApiResponse(responseCode = "400",description = "RESPONSE ERROR",content = @Content)
     })
     //fin de swagger
-    //http://localhost:8080/api/historial/save
+    //http://localhost:8091/api/history/save
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody HistoryDTO historyDTO) throws URISyntaxException {
         if (historyDTO.getNameUser().isBlank()) {
