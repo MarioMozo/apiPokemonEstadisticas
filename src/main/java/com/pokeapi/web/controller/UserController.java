@@ -48,6 +48,9 @@ public class UserController {
                     .name(user.getName())
                     .timeBet(user.getTimeBet())
                     .winner(user.getWinner())
+                    .battles(user.getBattles())
+                    .victories(user.getVictories())
+                    .defeats(user.getDefeats())
                     .build();
             return ResponseEntity.ok(userDTO);
 
@@ -66,6 +69,9 @@ public class UserController {
                         .name(user.getName())
                         .timeBet(user.getTimeBet())
                         .winner(user.getWinner())
+                        .battles(user.getBattles())
+                        .victories(user.getVictories())
+                        .defeats(user.getDefeats())
                         .build())
                 .toList();
         return ResponseEntity.ok(userDTO);
@@ -90,8 +96,12 @@ public class UserController {
         userService.save(UserEntity.builder()
                 .idUser(userDTO.getIdUser())
                 .name(userDTO.getName())
+                        .timeBet((userDTO.getTimeBet()))
                 .winner(userDTO.getWinner())
-                .timeBet(userDTO.getTimeBet())
+                .battles(userDTO.getBattles())
+                        .victories(userDTO.getVictories())
+                        .defeats(userDTO.getDefeats())
+
                 .build());
         return ResponseEntity.created(new URI("/api/user/save")).build();
     }
@@ -117,8 +127,11 @@ public class UserController {
             user.setName(userDTO.getName());
             user.setTimeBet(userDTO.getTimeBet());
             user.setWinner(userDTO.getWinner());
+            user.setBattles(userDTO.getBattles());
+            user.setVictories(userDTO.getVictories());
+            user.setDefeats(userDTO.getDefeats());
             userService.save(user);
-            return ResponseEntity.ok("Usuario actualizado correctamente");
+            return ResponseEntity.ok("Successfully updated user");
         }
         return ResponseEntity.notFound().build();
     }

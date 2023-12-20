@@ -47,7 +47,10 @@ public class OponentController {
                     .name(oponent.getName())
                     .type(oponent.getType())
                     .hp(oponent.getHp())
-                    .battles(oponent.getDefeats())
+                    .winner(oponent.getWinner())
+                    .battles(oponent.getBattles())
+                    .victories(oponent.getVictories())
+                    .defeats(oponent.getDefeats())
                     .build();
             return ResponseEntity.ok(oponentDTO);
 
@@ -67,6 +70,9 @@ public class OponentController {
                         .type(oponent.getType())
                         .hp(oponent.getHp())
                         .winner(oponent.getWinner())
+                        .battles(oponent.getBattles())
+                        .victories(oponent.getVictories())
+                        .defeats(oponent.getDefeats())
                         .build())
                 .toList();
         return ResponseEntity.ok(oponentDTOList);
@@ -94,6 +100,9 @@ public class OponentController {
                 .type(oponentDTO.getType())
                 .hp(oponentDTO.getHp())
                 .winner(oponentDTO.getWinner())
+                        .battles(oponentDTO.getBattles())
+                        .victories(oponentDTO.getVictories())
+                        .defeats(oponentDTO.getDefeats())
                 .build());
         return ResponseEntity.created(new URI("/api/oponent/save")).build();
     }
@@ -119,8 +128,11 @@ public class OponentController {
             oponent.setType(oponentUpdate.getType());
             oponent.setHp(oponentUpdate.getHp());
             oponent.setWinner(oponentUpdate.getWinner());
+            oponent.setBattles(oponentUpdate.getBattles());
+            oponent.setVictories(oponentUpdate.getVictories());
+            oponent.setDefeats(oponentUpdate.getDefeats());
             oponentService.save(oponent);
-            return ResponseEntity.ok("Pokemon actualizado");
+            return ResponseEntity.ok("Pokemon updated");
         }
         return ResponseEntity.notFound().build();
     }
@@ -139,7 +151,7 @@ public class OponentController {
     public ResponseEntity<?> deleteById(@PathVariable Integer id){
         if (id != null){
             oponentService.deleteById(id);
-            return ResponseEntity.ok("Pokemon eliminado");
+            return ResponseEntity.ok("Pokemon removed");
         }
         return ResponseEntity.badRequest().build();
     }
