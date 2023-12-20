@@ -48,8 +48,14 @@ CONTROLLER
 ```
 ##
 ENDPOINT FOR BATTLE NODEJS TEAM
-url http://localhost:8091/api/history/save
-HistoryDTO
+
+# url http://localhost:8091/api/history/save
+
+# HistoryDTO
+
+{
+
+
 idUser	integer
 nameUser	string
 timeBet	integer
@@ -66,9 +72,19 @@ moveOpntPokemon	string
 hpOpntPokemon	integer
 numberTurns	integer
 
-ENDPOINT TO SHOW IN THE STATISTICS FRONTEND
+
+}
+
+
+# ENDPOINT TO SHOW IN THE STATISTICS FRONTEND
+
+
  url http://localhost:8091/api/history/findall
+
+ 
 {
+
+
 "idUser": 3,
   "nameUser": "mario",
   "timeBet": 10,
@@ -84,6 +100,8 @@ ENDPOINT TO SHOW IN THE STATISTICS FRONTEND
   "moveOpntPokemon": "thunder",
   "hpOpntPokemon": 10,
   "numberTurns": 3
+
+  
 }
 
 ## Contributing
