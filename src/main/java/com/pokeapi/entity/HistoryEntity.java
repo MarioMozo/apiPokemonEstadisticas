@@ -22,43 +22,42 @@ public class HistoryEntity {
     private String nameUser;
 
     @Column(nullable = false)
-    private Integer timeBetUser;
+    private Integer timeBet;
 
     @Column(nullable = false)
     private Boolean isWinnerUser;
-
 
     @Column(name = "id_user_pokemon", nullable = false)
     private Integer idUserPokemon;
 
     @Column(nullable = false, length = 50)
-    private String namePokemon;
+    private String nameUserPokemon;
 
     @Column(nullable = false, length = 50)
-    private String typePokemon;
+    private String typeUserPokemon;
 
     @Column(nullable = false, length = 50)
-    private String movesPokemon;
+    private String moveUserPokemon;
 
     @Column(nullable = false)
-    private Integer hpPokemon;
+    private Integer hpUserPokemon;
 
     @Column(nullable = false)
-    private Boolean winnerPokemon;
-
-
-    @Column(name = "id_oponent", nullable = false)
-    private Integer idOponent;
-
-    @Column(nullable = false, length = 50)
-    private String isOponentUser;
+    private Boolean isOpntWinner;
 
     @Column(nullable = false, length = 25)
-    private String typeOponent;
+    private String nameOpntPokemon;
+
+    @Column(nullable = false, length = 25)
+    private String typeOpnt;
+
+    @Column(nullable = false, length = 25)
+    private String moveOpntPokemon;
 
     @Column(nullable = false )
-    private Integer hpOponent;
+    private Integer hpOpntPokemon;
 
-    @Column(nullable = false)
-    private Boolean winnerOponent;
+    @Column(nullable = false )
+    private Integer numberTurns;
+
 }

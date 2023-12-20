@@ -3,8 +3,6 @@ package com.pokeapi.web.controller;
 import com.pokeapi.entity.HistoryEntity;
 import com.pokeapi.service.IHistoryService;
 import com.pokeapi.web.controller.dto.HistoryDTO;
-
-import com.pokeapi.web.controller.dto.UserDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -37,19 +35,19 @@ public class HistoryController {
                 .map(historial -> HistoryDTO.builder()
                         .idUser(historial.getIdUser())
                         .nameUser(historial.getNameUser())
-                        .timeBetUser(historial.getTimeBetUser())
+                        .timeBet(historial.getTimeBet())
                         .isWinnerUser(historial.getIsWinnerUser())
                         .idUserPokemon(historial.getIdUserPokemon())
-                        .namePokemon(historial.getNamePokemon())
-                        .typeOponent(historial.getTypeOponent())
-                        .movesPokemon(historial.getMovesPokemon())
-                        .hpOponent(historial.getHpOponent())
-                        .winnerOponent(historial.getWinnerOponent())
-                        .idOponent(historial.getIdOponent())
-                        .isOponentUser(historial.getIsOponentUser())
-                        .typePokemon(historial.getTypePokemon())
-                        .hpPokemon(historial.getHpPokemon())
-                        .winnerPokemon(historial.getWinnerPokemon())
+                        .nameUserPokemon(historial.getNameUserPokemon())
+                        .typeUserPokemon(historial.getTypeUserPokemon())
+                        .moveUserPokemon(historial.getMoveUserPokemon())
+                        .hpUserPokemon(historial.getHpUserPokemon())
+                        .isOpntWinner(historial.getIsOpntWinner())
+                        .nameOpntPokemon(historial.getNameOpntPokemon())
+                        .typeOpnt(historial.getTypeOpnt())
+                        .moveOpntPokemon(historial.getMoveOpntPokemon())
+                        .hpOpntPokemon(historial.getHpOpntPokemon())
+                        .numberTurns(historial.getNumberTurns())
                         .build())
                 .toList();
         return ResponseEntity.ok(historialEntity);
@@ -73,20 +71,20 @@ public class HistoryController {
             return  ResponseEntity.badRequest().build();
         }
         historyService.save(HistoryEntity.builder()
-                .nameUser(historyDTO.getNameUser())
-                .timeBetUser(historyDTO.getTimeBetUser())
-                .isWinnerUser(historyDTO.getIsWinnerUser())
-                .idUserPokemon(historyDTO.getIdUserPokemon())
-                .namePokemon(historyDTO.getNamePokemon())
-                .typePokemon(historyDTO.getTypePokemon())
-                .movesPokemon(historyDTO.getMovesPokemon())
-                .hpPokemon(historyDTO.getHpPokemon())
-                .winnerPokemon(historyDTO.getWinnerPokemon())
-                .idOponent(historyDTO.getIdOponent())
-                .isOponentUser(historyDTO.getIsOponentUser())
-                .typeOponent(historyDTO.getTypeOponent())
-                .hpOponent(historyDTO.getHpOponent())
-                .winnerOponent(historyDTO.getWinnerOponent())
+                        .nameUser(historyDTO.getNameUser())
+                        .timeBet(historyDTO.getTimeBet())
+                        .isWinnerUser(historyDTO.getIsWinnerUser())
+                        .idUserPokemon(historyDTO.getIdUserPokemon())
+                        .nameUserPokemon(historyDTO.getNameUserPokemon())
+                        .typeUserPokemon(historyDTO.getTypeUserPokemon())
+                        .moveUserPokemon(historyDTO.getMoveUserPokemon())
+                        .hpUserPokemon(historyDTO.getHpUserPokemon())
+                        .isOpntWinner(historyDTO.getIsOpntWinner())
+                        .nameOpntPokemon(historyDTO.getNameOpntPokemon())
+                        .typeOpnt(historyDTO.getTypeOpnt())
+                        .moveOpntPokemon(historyDTO.getMoveOpntPokemon())
+                        .hpOpntPokemon(historyDTO.getHpOpntPokemon())
+                        .numberTurns(historyDTO.getNumberTurns())
                 .build());
         return ResponseEntity.created(new URI("/api/historial/save")).build();
 
