@@ -46,6 +46,45 @@ SERVICE
 CONTROLLER
 
 ```
+##
+ENDPOINT FOR BATTLE NODEJS TEAM
+url http://localhost:8091/api/history/save
+HistoryDTO
+idUser	integer
+nameUser	string
+timeBet	integer
+isWinnerUser	boolean
+idUserPokemon	integer
+nameUserPokemon	string
+typeUserPokemon	string
+moveUserPokemon	string
+hpUserPokemon	integer
+isOpntWinner	boolean
+nameOpntPokemon	string
+typeOpnt	string
+moveOpntPokemon	string
+hpOpntPokemon	integer
+numberTurns	integer
+
+ENDPOINT TO SHOW IN THE STATISTICS FRONTEND
+ url http://localhost:8091/api/history/findall
+{
+"idUser": 3,
+  "nameUser": "mario",
+  "timeBet": 10,
+  "isWinnerUser": true,
+  "idUserPokemon": 1,
+  "nameUserPokemon": "picachu",
+  "typeUserPokemon": "l",
+  "moveUserPokemon": "l",
+  "hpUserPokemon": 10,
+  "isOpntWinner": true,
+  "nameOpntPokemon": "pc1",
+  "typeOpnt": "earth",
+  "moveOpntPokemon": "thunder",
+  "hpOpntPokemon": 10,
+  "numberTurns": 3
+}
 
 ## Contributing
 
