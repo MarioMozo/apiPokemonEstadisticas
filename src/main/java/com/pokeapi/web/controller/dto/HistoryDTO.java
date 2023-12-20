@@ -1,5 +1,6 @@
 package com.pokeapi.web.controller.dto;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,30 +16,30 @@ public class HistoryDTO {
 
     private String nameUser;
 
-    private Integer timeBetUser;
+    private Integer timeBet;
 
-    private Boolean winnerUser;
+    private Boolean isWinnerUser;
 
     private Integer idUserPokemon;
 
-    private String namePokemon;
+    private String nameUserPokemon;
 
-    private String typePokemon;
+    private String typeUserPokemon;
 
-    private String movesPokemon;
+    private String moveUserPokemon;
 
-    private Integer hpPokemon;
+    private Integer hpUserPokemon;
 
-    private Boolean winnerPokemon;
+    private Boolean isOpntWinner;
 
-    private Integer idOponent;
+    private String nameOpntPokemon;
 
-    private String nameOponent;
+    private String typeOpnt;
 
-    private String typeOponent;
+    private String moveOpntPokemon;
 
-    private Integer hpOponent;
+    private Integer hpOpntPokemon;
 
-    private Boolean winnerOponent;
+    private Integer numberTurns;
 
 }
